@@ -1,4 +1,4 @@
-package Jinu;
+package DataStructures;
 import java.util.*;
 
 class DListNode {

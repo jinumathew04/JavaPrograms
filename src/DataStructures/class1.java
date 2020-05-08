@@ -1,5 +1,4 @@
-package Jinu;
-
+package DataStructures;
 /**
  * Created by joetomjob on 3/16/20.
  */

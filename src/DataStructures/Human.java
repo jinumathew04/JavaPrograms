@@ -1,4 +1,4 @@
-package Jinu;
+package DataStructures;
 
 import java.text.DecimalFormat;
 import java.text.NumberFormat;

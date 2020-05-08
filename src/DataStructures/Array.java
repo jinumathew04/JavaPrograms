@@ -1,4 +1,4 @@
-package Jinu;
+package DataStructures;
 
 public class Array {
 }

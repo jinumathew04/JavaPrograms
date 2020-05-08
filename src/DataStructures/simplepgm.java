@@ -1,4 +1,4 @@
-package Jinu;
+package DataStructures;
 
 import java.io.BufferedReader;
 import java.io.InputStream;

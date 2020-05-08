@@ -1,4 +1,4 @@
-package Jinu;
+package DataStructures;
 
 public class BSearch {
     public static final int FAILURE = -1;
