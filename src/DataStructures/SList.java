@@ -21,9 +21,18 @@ public class SList {
         head = new SListNode(item, head);
         size++;
     }
+    public void insertBack(Object item){
+        SListNode h =head;
+        while( h.next != null) {
+            h = h.next;
+        }
+        h.next = new SListNode(item,null);
+        size++;
+    }
     public void deleteFront(){
         if(head!=null){
             head = head.next;
+            size--;
         }
     }
     public void print(){
@@ -42,5 +51,8 @@ public class SList {
         s.print();
         s.deleteFront();
         s.print();
+        s.insertBack("water");
+        s.print();
+
     }
 }
