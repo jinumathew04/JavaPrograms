@@ -5,19 +5,19 @@ class KeyValuePair2{
     String key;
     String value;
 
-    public KeyValuePair2(String word, String definition){
-        this.key = word;
-        this.value = definition;
+    public KeyValuePair2(String key, String value){
+        this.key = key;
+        this.value = value;
     }
 }
 
-public class HashtableNew {
+public class HashTableNew {
     static int size = 0;
     static KeyValuePair2[] def = new KeyValuePair2[99999999];
 
-    public static void insertItem(String word, String definition) {
+    public void insertItem(String word, String definition) {
         int index = hshCode(word);
-        while (def[index] != null && def[index].key != "DELETED") {
+        while (def[index] != null && !def[index].key.equals("DELETED")) {
             index++;
             if(index == def.length){
                 index = 0;
@@ -38,9 +38,9 @@ public class HashtableNew {
         }
     }
 
-    public static String find(String key) {
+    public String find(String key) {
         int index = hshCode(key);
-        while (def[index].key != key || def[index] != null) {
+        while (def[index] != null && !def[index].key.equals(key)) {
             index++;
             if (index == def.length) {
                 index = 0;
@@ -53,9 +53,9 @@ public class HashtableNew {
         }
     }
 
-    public static void removeItem(String key){
+    public void removeItem(String key){
         int index = hshCode(key);
-        while (def[index].key != key || def[index] != null) {
+        while (def[index] != null && !def[index].key.equals(key)) {
             index++;
             if (index == def.length) {
                 index = 0;
@@ -77,6 +77,14 @@ public class HashtableNew {
     }
 
     public static void main(String[] args) {
-
+        HashTableNew h = new HashTableNew();
+        h.insertItem("rose","flower");
+        h.insertItem("apple","fruit");
+        h.insertItem("carrot","vegetable");
+        System.out.println(h.find("apple"));
+        System.out.println(h.find("apples"));
+        h.removeItem("apple");
+        System.out.println(h.find("apple"));
+        h.removeItem("mango");
     }
 }

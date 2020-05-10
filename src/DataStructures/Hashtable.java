@@ -38,7 +38,7 @@ public class Hashtable {
 
     public static void insertItem(Word word, Definition definition){
         int index = word.hshCode();
-        while (def[index] != null && def[index].key.w != "DELETED") {
+        while (def[index] != null && !def[index].key.w.equals("DELETED")) {
             index++;
             if(index == def.length){
                 index = 0;
@@ -61,7 +61,7 @@ public class Hashtable {
 
     public static Definition find(Word key) {
         int index = key.hshCode();
-        while (def[index].key.w != key.w || def[index] != null) {
+        while (def[index] != null && !def[index].key.w.equals(key.w)) {
             index++;
             if (index == def.length) {
                 index = 0;
@@ -76,7 +76,7 @@ public class Hashtable {
 
     public static void removeItem(Word key){
         int index = key.hshCode();
-        while (def[index].key.w != key.w || def[index] != null) {
+        while (def[index] != null && !def[index].key.w.equals(key.w)) {
             index++;
             if (index == def.length) {
                 index = 0;
