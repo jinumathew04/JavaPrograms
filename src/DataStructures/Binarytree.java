@@ -13,14 +13,15 @@ class Noden{
   Noden(int item){
     this.item = item;
   }
-
 }
+
 public class Binarytree {
   Noden root;
 
   Binarytree(Noden root){
     this.root = root;
   }
+
   public void insert(int n) {
     if(this.root == null){
       this.root = new Noden(n);
@@ -46,6 +47,29 @@ public class Binarytree {
       }
     }
   }
+  public boolean contains(int n){
+    return contains(this.root,n);
+  }
+   public boolean contains(Noden root, int n){
+    if(n == root.item){
+      return true;
+    }else if(n < root.item){
+      root = root.left;
+      if(root == null){
+        return false;
+      }else{
+        return contains(root,n);
+      }
+    }
+    else{
+      root = root.right;
+      if(root == null){
+        return false;
+      }else{
+        return contains(root,n);
+      }
+    }
+   }
 
   public void inorder(){
     inorder(this.root);
@@ -69,5 +93,9 @@ public class Binarytree {
     t.insert(8);
     t.insert(17);
     t.inorder();
+    System.out.println();
+    System.out.println(t.contains(5));
+    System.out.println(t.contains(25));
+    System.out.println(t.contains(0));
   }
 }
