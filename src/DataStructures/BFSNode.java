@@ -100,8 +100,8 @@ public class BFSNode {
         ArrayList<String> res = findPath(a,h);
         System.out.print("The path is:- ");
         for( String s: res){
-            System.out.print(s);
             System.out.print('\t');
+            System.out.print(s);
         }
 
     }

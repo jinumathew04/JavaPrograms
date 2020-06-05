@@ -86,13 +86,14 @@ public class DFSNode {
         d.addNeighbour(g);
         d.addNeighbour(h);
 
-        //System.out.println(chkPathExist(a,j));
+        System.out.println(chkPathExist(a,j));
         System.out.println(chkPathExist(a,h));
 
         ArrayList<String> res = findPath(a,h);
 
         for(String s : res){
             System.out.print(s);
+            System.out.print('\t');
         }
     }
 }
